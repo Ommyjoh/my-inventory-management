@@ -18,11 +18,14 @@ class PrintInvoice extends Component
     {
         $todayDate = Carbon::now();
         $customer = Customer::find($this->invoice->customer_id);
+        $invoices = Invoice::where('iNo', $this->invoice->iNo)
+                    ->get();
 
         return view('livewire.admin.invoice.print-invoice',
         [
             'customer' => $customer,
-            'todayDate' => $todayDate
+            'todayDate' => $todayDate,
+            'invoices' => $invoices
         ]);
     }
 }

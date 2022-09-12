@@ -55,7 +55,7 @@
 			          <th class="text-center" style="width:5%">#</th>
 			          <th style="width:50%">Item</th>
 			          <th class="text-right" style="width:15%">Quantity</th>
-			          <th class="text-right" style="width:15%">Unit Price</th>
+			          <th class="text-right" style="width:15%">Discount</th>
 			          <th class="text-right" style="width:15%">Total Price</th>
 			        </tr>
 			      </thead>
@@ -66,27 +66,6 @@
 			          <td class="text-right">10</td>
 			          <td class="text-right">$18</td>
 			          <td class="text-right">$180</td>
-			        </tr>
-			        <tr>
-			          <td class="text-center">2</td>
-			          <td>Flat Icons</td>
-			          <td class="text-right">6</td>
-			          <td class="text-right">$59</td>
-			          <td class="text-right">$254</td>
-			        </tr>
-			        <tr>
-			          <td class="text-center">3</td>
-			          <td>Wordpress version</td>
-			          <td class="text-right">4</td>
-			          <td class="text-right">$95</td>
-			          <td class="text-right">$285</td>
-			        </tr>
-			         <tr class="last-row">
-			          <td class="text-center">4</td>
-			          <td>Server Deployment</td>
-			          <td class="text-right">1</td>
-			          <td class="text-right">$300</td>
-			          <td class="text-right">$300</td>
 			        </tr>
 			       </tbody>
 			    </table>
