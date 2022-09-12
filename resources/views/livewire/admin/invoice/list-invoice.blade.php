@@ -29,7 +29,7 @@
             </div>
 
             <div class="btn-group" role="group" aria-label="Basic outlined example">
-                <h5 class="pr-4">Total 41 Invoices</h5>
+                <h5 class="pr-4">Total of {{ $invoiceCount }} Invoices</h5>
             </div>
         </div>
 
@@ -52,14 +52,25 @@
                             <td>{{ $loop->iteration }}</td>
                             <td>{{ $invoice->iNo }}</td>
                             <td>{{ $invoice->customer->name }}</td>
-                            <td>{{ $invoice->discount }}</td>
+                            @if ($invoice->discount > 0)
+                                <td>{{ $invoice->discount }}</td>
+                            @else
+                                <td>-</td>
+                            @endif
                             <td>{{ $invoice->totalPrice }}</td>
                             <td class="text-center">
                                 <a href="#"> <i class="fa fa-print fs-6 text-primary pr-2" title="print"></i> </a>
                             </td>
                         </tr>
                     @empty
-                        
+                        <tr>
+                            <td colspan="6" class="text-center">
+                                <div class="d-flex flex-column align-items-center justify-content-center">
+                                    <img style="width: 200px" src="{{ asset('backend/dist/assets/images/notfound.png') }}" alt="">
+                                    <span class="mt-2">No invoice at a time!</span>
+                                </div>
+                            </td>
+                        </tr>
                     @endforelse
             </tbody>
 

@@ -15,12 +15,17 @@ class ListInvoice extends Component
                     ->selectRaw('sum(discount) as discount')
                     ->latest()
                     ->get();
+
+        $invoiceCount = Invoice::all()
+                        ->where('status', 'APPROVED')
+                        ->groupBy('iNo')
+                        ->count();
                     
 
-        // dd($invoices);
         return view('livewire.admin.invoice.list-invoice', 
         [
-            'invoices' => $invoices
+            'invoices' => $invoices,
+            'invoiceCount' => $invoiceCount
         ]);
     }
 }
