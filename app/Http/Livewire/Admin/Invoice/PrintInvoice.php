@@ -10,11 +10,11 @@ class PrintInvoice extends Component
     public $invoice;
 
     public function mount(Invoice $invoice){
-        $this->invoice = $invoice->toArray();
+        $this->invoice = $invoice;
     }
     public function render()
     {
-        dd($this->invoice);
+        // dd($this->invoice->id);
         return view('livewire.admin.invoice.print-invoice');
     }
 }
