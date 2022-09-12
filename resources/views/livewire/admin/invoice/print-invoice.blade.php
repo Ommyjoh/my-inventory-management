@@ -13,8 +13,8 @@
 				</div>
 
 				<div class="col-sm-6 top-right">
-						<h3 class="marginright">INVOICE-1234578</h3>
-						<span class="marginright">14 April 2014</span>
+						<h3 class="marginright">INVOICE: {{ $invoice->iNo }}</h3>
+						<span class="marginright">{{ $todayDate }}</span>
 			    </div>
 
 			</div>
@@ -23,7 +23,6 @@
 
 				<div class="col-xs-4 from">
 					<p class="lead marginbottom">From : OMMYJOH & CO. LTD</p>
-					<p>350 House, Osterbay</p>
 					<p>Street 23, Zakiwa</p>
 					<p>Kinondoni, Dar es Salaam</p>
 					<p>Phone: +255 717 810 599</p>
@@ -31,21 +30,20 @@
 				</div>
 
 				<div class="col-xs-4 to">
-					<p class="lead marginbottom">To : John Doe</p>
-					<p>425 Market Street</p>
-					<p>Suite 2200, San Francisco</p>
-					<p>California, 94105</p>
-					<p>Phone: 415-676-3600</p>
-					<p>Email: john@doe.com</p>
+					<p class="lead marginbottom">To: {{ $customer->name }}</p>
+					<p>{{ $customer->address }}</p>
+					<p>{{ '+255 '.substr($customer->telephone, 1,3). " " . substr($customer->telephone, 3,3). " " . substr($customer->telephone, 6) }}</p>
+					<p>{{ $customer->email }}</p>
+                    <p>{{ $todayDate }}</p>
 
 			    </div>
 
 			    <div class="col-xs-4 text-right payment-details">
 					<p class="lead marginbottom payment-info">Payment details</p>
-					<p>Date: 14 April 2014</p>
-					<p>VAT: DK888-777 </p>
+					<p>{{ $invoice->updated_at }}</p>
+					<p>VAT: TZ 18% Each </p>
 					<p>Total Amount: $1019</p>
-					<p>Account Name: Flatter</p>
+					<p>Account Name: {{ $customer->name }}</p>
 			    </div>
 
 			</div>

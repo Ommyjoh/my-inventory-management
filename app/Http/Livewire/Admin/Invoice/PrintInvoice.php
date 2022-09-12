@@ -2,19 +2,27 @@
 
 namespace App\Http\Livewire\Admin\Invoice;
 
+use App\Models\Customer;
 use App\Models\Invoice;
+use Carbon\Carbon;
 use Livewire\Component;
 
 class PrintInvoice extends Component
 {
-    public $invoice, $customer_id, $invoice_id;
+    public $invoice;
 
     public function mount(Invoice $invoice){
         $this->invoice = $invoice;
     }
     public function render()
     {
-        // dd($this->invoice->id);
-        return view('livewire.admin.invoice.print-invoice');
+        $todayDate = Carbon::now();
+        $customer = Customer::find($this->invoice->customer_id);
+
+        return view('livewire.admin.invoice.print-invoice',
+        [
+            'customer' => $customer,
+            'todayDate' => $todayDate
+        ]);
     }
 }
