@@ -22,12 +22,12 @@
 			<div class="d-flex justify-content-between">
 
 				<div class="col-xs-4 from">
-					<p class="lead marginbottom">From : Dynofy</p>
-					<p>350 Rhode Island Street</p>
-					<p>Suite 240, San Francisco</p>
-					<p>California, 94103</p>
-					<p>Phone: 415-767-3600</p>
-					<p>Email: contact@dynofy.com</p>
+					<p class="lead marginbottom">From : OMMYJOH & CO. LTD</p>
+					<p>350 House, Osterbay</p>
+					<p>Street 23, Zakiwa</p>
+					<p>Kinondoni, Dar es Salaam</p>
+					<p>Phone: +255 717 810 599</p>
+					<p>Email: emmanuel@ommyjoh.com</p>
 				</div>
 
 				<div class="col-xs-4 to">

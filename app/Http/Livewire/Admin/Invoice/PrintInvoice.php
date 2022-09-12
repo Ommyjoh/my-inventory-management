@@ -7,7 +7,7 @@ use Livewire\Component;
 
 class PrintInvoice extends Component
 {
-    public $invoice;
+    public $invoice, $customer_id, $invoice_id;
 
     public function mount(Invoice $invoice){
         $this->invoice = $invoice;
