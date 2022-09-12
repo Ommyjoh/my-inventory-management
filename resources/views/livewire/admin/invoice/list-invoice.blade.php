@@ -39,28 +39,28 @@
                 <tr>
                     <th style="width: 10px">#</th>
                     <th>Invoice No</th>
-                    <th>Date</th>
                     <th>Customer Name</th>
-                    <th>Product Name</th>
-                    <th>Qty</th>
-                    <th>Amount</th>
+                    <th>Total Discount</th>
+                    <th>Total Amount</th>
                     <th>Action</th>
                 </tr>
             </thead>
 
             <tbody>
-                    <tr>
-                        <td>1</td>
-                        <td>IN234589</td>
-                        <td>20-12-2022</td>
-                        <td>Emmanuel Boshe</td>
-                        <td>Azam Energy</td>
-                        <td>100</td>
-                        <td>120000</td>
-                        <td class="text-center">
-                            <a href="#"> <i class="fa fa-print fs-6 text-primary pr-2" title="print"></i> </a>
-                        </td>
-                    </tr>
+                    @forelse ($invoices as $invoice)
+                        <tr>
+                            <td>{{ $loop->iteration }}</td>
+                            <td>{{ $invoice->iNo }}</td>
+                            <td>{{ $invoice->customer->name }}</td>
+                            <td>{{ $invoice->discount }}</td>
+                            <td>{{ $invoice->totalPrice }}</td>
+                            <td class="text-center">
+                                <a href="#"> <i class="fa fa-print fs-6 text-primary pr-2" title="print"></i> </a>
+                            </td>
+                        </tr>
+                    @empty
+                        
+                    @endforelse
             </tbody>
 
         </table>
