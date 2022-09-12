@@ -19,13 +19,24 @@ class PrintInvoice extends Component
         $todayDate = Carbon::now();
         $customer = Customer::find($this->invoice->customer_id);
         $invoices = Invoice::where('iNo', $this->invoice->iNo)
+                    ->where('status', 'APPROVED')
                     ->get();
+
+        $totalAmount = Invoice::where('iNo', $this->invoice->iNo)
+                    ->where('status', 'APPROVED')
+                    ->sum('totalPrice');
+
+        $totalDisc = Invoice::where('iNo', $this->invoice->iNo)
+                    ->where('status', 'APPROVED')
+                    ->sum('discount');
 
         return view('livewire.admin.invoice.print-invoice',
         [
             'customer' => $customer,
             'todayDate' => $todayDate,
-            'invoices' => $invoices
+            'invoices' => $invoices,
+            'totalAmount' => $totalAmount,
+            'totalDisc' => $totalDisc
         ]);
     }
 }

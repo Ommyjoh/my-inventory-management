@@ -60,30 +60,33 @@
 			        </tr>
 			      </thead>
 			      <tbody>
-			        <tr>
-			          <td class="text-center">1</td>
-			          <td>Flatter Theme</td>
-			          <td class="text-right">10</td>
-			          <td class="text-right">$18</td>
-			          <td class="text-right">$180</td>
-			        </tr>
+			        @foreach ($invoices as $invoice)
+                    <tr>
+                        <td class="text-center">{{ $loop->iteration }}</td>
+                        <td>{{ $invoice->product->name }}</td>
+                        <td class="text-right">{{ $invoice->qty }}</td>
+                        @if ( $invoice->discount )
+                            <td class="text-right">TZS {{ $invoice->discount }}</td>
+                        @else
+                            <td class="text-right">0</td>
+                        @endif
+                        <td class="text-right">TZS {{ $invoice->totalPrice }}</td>
+                      </tr>
+                    @endforeach
 			       </tbody>
 			    </table>
 
 			</div>
 
-			<div class="row">
-			<div class="col-xs-6 margintop">
-				<p class="lead marginbottom">THANK YOU!</p>
-
-				<button class="btn btn-success" id="invoice-print"><i class="fa fa-print"></i> Print Invoice</button>
-				<button class="btn btn-danger"><i class="fa fa-envelope-o"></i> Mail Invoice</button>
+			<div class="m-2 d-flex justify-content-between align-items-center">
+			<div class="col-xs-6 margintop mt-4">
+				<p class="lead marginbottom"></p>
 			</div>
 			<div class="col-xs-6 text-right pull-right invoice-total">
-					  <p>Subtotal : $1019</p>
-			          <p>Discount (10%) : $101 </p>
-			          <p>VAT (8%) : $73 </p>
-			          <p>Total : $991 </p>
+					  <p>Subtotal :TZS {{ $totalAmount }}</p>
+			          <p>Discount :TZS {{ $totalDisc }} </p>
+			          <p>VAT (18%) :TZS {{ $totalAmount * 0.18 }} </p>
+			          <p>Total :TZS {{ $totalAmount + ($totalAmount * 0.18)}} </p>
 			</div>
 			</div>
 
@@ -91,6 +94,11 @@
 		</div>
 	</div>
 </div>
+</div>
+
+<div class="d-flex justify-content-center mt-3">
+    <button class="btn btn-success mr-1" id="invoice-print"><i class="fa fa-print"></i> Print Invoice</button>
+    <button class="btn btn-danger ml-1"><i class="fa fa-close"></i> Close Invoice</button>
 </div>
 </div>
 
