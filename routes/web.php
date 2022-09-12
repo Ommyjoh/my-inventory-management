@@ -6,6 +6,7 @@ use App\Http\Livewire\Admin\Customers\ListCustomers;
 use App\Http\Livewire\Admin\Invoice\CreateInvoice;
 use App\Http\Livewire\Admin\Invoice\ListApprovalInvoice;
 use App\Http\Livewire\Admin\Invoice\ListInvoice;
+use App\Http\Livewire\Admin\Invoice\PrintInvoice;
 use App\Http\Livewire\Admin\Products\ListProducts;
 use App\Http\Livewire\Admin\Purchases\CreatePurchases;
 use App\Http\Livewire\Admin\Purchases\ListPurchases;
@@ -49,3 +50,5 @@ Route::get('admin/listinvoices', ListInvoice::class)->name('admin.listInvoices')
 Route::get('admin/createinvoice', CreateInvoice::class)->name('admin.createInvoice');
 
 Route::get('admin/listapprovalinvoices', ListApprovalInvoice::class)->name('admin.listApprovalInvoices');
+
+Route::get('admin/invoice/{invoice}/print', PrintInvoice::class)->name('admin.printInvoice');

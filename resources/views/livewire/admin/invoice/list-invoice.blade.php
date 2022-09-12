@@ -59,7 +59,7 @@
                             @endif
                             <td>{{ $invoice->totalPrice }}</td>
                             <td class="text-center">
-                                <a href="#"> <i class="fa fa-print fs-6 text-primary pr-2" title="print"></i> </a>
+                                <a href="{{ route('admin.printInvoice') }}"> <i class="fa fa-print fs-6 text-primary pr-2" title="print"></i> </a>
                             </td>
                         </tr>
                     @empty
