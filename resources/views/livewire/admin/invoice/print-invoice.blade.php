@@ -41,8 +41,8 @@
 			    <div class="col-xs-4 text-right payment-details">
 					<p class="lead marginbottom payment-info">Payment details</p>
 					<p>{{ $invoice->updated_at }}</p>
-					<p>VAT: TZ 18% Each </p>
-					<p>Total Amount: $1019</p>
+					<p>VAT: TZ 18% Total </p>
+					<p>Total Amount: TZS {{ $totalAmount}}</p>
 					<p>Account Name: {{ $customer->name }}</p>
 			    </div>
 
@@ -83,10 +83,10 @@
 				<p class="lead marginbottom"></p>
 			</div>
 			<div class="col-xs-6 text-right pull-right invoice-total">
-					  <p>Subtotal :TZS {{ $totalAmount }}</p>
+					  <p>Subtotal :TZS {{ $totalAmount - ($totalAmount * 0.18) }}</p>
 			          <p>Discount :TZS {{ $totalDisc }} </p>
 			          <p>VAT (18%) :TZS {{ $totalAmount * 0.18 }} </p>
-			          <p>Total :TZS {{ $totalAmount + ($totalAmount * 0.18)}} </p>
+			          <p>Total :TZS {{ $totalAmount}} </p>
 			</div>
 			</div>
 
@@ -98,7 +98,7 @@
 
 <div class="d-flex justify-content-center mt-3">
     <button class="btn btn-success mr-1" id="invoice-print"><i class="fa fa-print"></i> Print Invoice</button>
-    <button class="btn btn-danger ml-1"><i class="fa fa-close"></i> Close Invoice</button>
+    <button class="btn btn-danger ml-1"><i class="fa fa-envelope"></i> Mail Invoice</button>
 </div>
 </div>
 
