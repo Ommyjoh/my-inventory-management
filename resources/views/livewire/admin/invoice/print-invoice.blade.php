@@ -18,6 +18,7 @@
 			    </div>
 
 			</div>
+
 			<hr>
 			<div class="d-flex justify-content-between">
 
@@ -53,7 +54,7 @@
 			      <thead>
 			        <tr>
 			          <th class="text-center" style="width:5%">#</th>
-			          <th style="width:50%">Item</th>
+			          <th style="width:50%">Product Name</th>
 			          <th class="text-right" style="width:15%">Quantity</th>
 			          <th class="text-right" style="width:15%">Discount</th>
 			          <th class="text-right" style="width:15%">Total Price</th>
@@ -78,16 +79,20 @@
 
 			</div>
 
-			<div class="m-2 d-flex justify-content-between align-items-center">
-			<div class="col-xs-6 margintop mt-4">
-				<p class="lead marginbottom"></p>
-			</div>
-			<div class="col-xs-6 text-right pull-right invoice-total">
-					  <p>Subtotal :TZS {{ $totalAmount - ($totalAmount * 0.18) }}</p>
-			          <p>Discount :TZS {{ $totalDisc }} </p>
-			          <p>VAT (18%) :TZS {{ $totalAmount * 0.18 }} </p>
-			          <p>Total :TZS {{ $totalAmount}} </p>
-			</div>
+			<div class="m-2 mb-4 d-flex justify-content-between align-items-center">
+
+				<div>
+					<p></p>
+				</div>
+				<div class="col-xs-6 margintop">
+					<div>{!! DNS2D::getBarcodeHTML('http://console.globalapp.co.tz/home', 'QRCODE',5,5) !!}</div><br />
+				</div>
+				<div class="col-xs-6 text-right pull-right invoice-total">
+						<p>Subtotal :TZS {{ $totalAmount - ($totalAmount * 0.18) }}</p>
+						<p>Discount :TZS {{ $totalDisc }} </p>
+						<p>VAT (18%) :TZS {{ $totalAmount * 0.18 }} </p>
+						<p>Total :TZS {{ $totalAmount}} </p>
+				</div>
 			</div>
 
 		  </div>
