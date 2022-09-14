@@ -103,7 +103,7 @@
 
 <div class="d-flex justify-content-center mt-3">
     <button class="btn btn-success mr-1" id="invoice-print"><i class="fa fa-print"></i> Print Invoice</button>
-    <button class="btn btn-danger ml-1"><i class="fa fa-envelope"></i> Mail Invoice</button>
+    <button wire:click = "downloadInvoice" class="btn btn-danger ml-1"><i class="fa fa-envelope"></i> Mail Invoice</button>
 </div>
 </div>
 

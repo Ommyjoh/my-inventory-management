@@ -2,10 +2,10 @@
 
 namespace App\Http\Livewire\Admin\Invoice;
 
-use App\Models\Customer;
-use App\Models\Invoice;
 use Carbon\Carbon;
+use App\Models\Invoice;
 use Livewire\Component;
+use App\Models\Customer;
 
 class PrintInvoice extends Component
 {
@@ -14,6 +14,7 @@ class PrintInvoice extends Component
     public function mount(Invoice $invoice){
         $this->invoice = $invoice;
     }
+
     public function render()
     {
         $todayDate = Carbon::now();
