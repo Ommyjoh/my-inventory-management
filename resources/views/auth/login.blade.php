@@ -36,7 +36,7 @@
 				<div class="col-md-12">
 					<div class="card-body">
                         <img style="width: 80px" src="{{ asset ('backend/dist/assets/images/logo.png') }}" alt="" class="img-fluid mb-4">
-						<form method="POST">
+						<form action="{{ route('login') }}" method="POST">
 							@csrf
 							<h4 class="mb-3 f-w-400">Sign In</h4>
 							<div class="text-danger">
@@ -51,7 +51,7 @@
 							<div class="form-group mb-4">
 								<input name="password" type="password" class="form-control" id="Password" placeholder="Password">
 							</div>
-							<button type="submit" class="btn btn-block btn-primary mb-4">Signin</button>
+							<button type="submit" class="btn btn-block btn-primary mb-4">Sign in</button>
 						</form>
 						<hr>
 						<p class="mb-2 text-muted">Forgot password? <a href="auth-reset-password.html" class="f-w-400">Reset</a></p>

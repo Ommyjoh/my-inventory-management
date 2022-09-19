@@ -4,10 +4,10 @@
             
             <div class="">
                 <div class="main-menu-header">
-                    <img class="img-radius" src="{{asset('backend/dist/assets/images/user/emma.jpg')}}" alt="User-Profile-Image">
+                    <img class="img-radius" src="{{asset('backend/dist/assets/images/user/profile.png')}}" alt="User-Profile-Image">
                     <div class="user-details">
-                        <span>Emanuel Boshe</span>
-                        <div id="more-details">Admin<i class="m-l-5"></i></div>
+                        <span>{{ auth()->user()->name }}</span>
+                        <span>{{ auth()->user()->email }}</span>
                     </div>
                 </div>
             </div>

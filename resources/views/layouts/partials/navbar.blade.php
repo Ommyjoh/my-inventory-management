@@ -32,16 +32,16 @@
                     </a>
                     <div class="dropdown-menu dropdown-menu-right profile-notification">
                         <div class="pro-head">
-                            <img src="{{asset('backend/dist/assets/images/user/emma.jpg')}}" class="img-radius" alt="User-Profile-Image">
-                            <span>Emmanuel Boshe</span>
-                            <a href="auth-signin.html" class="dud-logout" title="Logout">
+                            <img src="{{asset('backend/dist/assets/images/user/profile.png')}}" class="img-radius" alt="User-Profile-Image">
+                            <span>{{ auth()->user()->name }}</span>
+                            <a href="#" class="dud-logout" title="Logout">
                                 <i class="feather icon-log-out"></i>
                             </a>
                         </div>
                         <ul class="pro-body">
-                            <li><a href="" class="dropdown-item"><i class="feather icon-user"></i> View Profile</a></li>
-                            <li><a href="" class="dropdown-item"><i class="feather icon-user"></i> Settings</a></li>
-                            <li><a href="" class="dropdown-item"><i class="feather icon-lock"></i> Lock Screen</a></li>
+                            <li><a href="#" class="dropdown-item"><i class="feather icon-user"></i> View Profile</a></li>
+                            <li><a href="#" class="dropdown-item"><i class="feather icon-user"></i> Settings</a></li>
+                            <li><a href="#" class="dropdown-item"><i class="feather icon-lock"></i> Lock Screen</a></li>
                         </ul>
                     </div>
                 </div>

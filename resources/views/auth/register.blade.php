@@ -38,7 +38,7 @@
                         <img style="width: 70px" src="{{ asset('backend/dist/assets/images/logo.png') }}" alt="" class="img-fluid mb-4">
 						<h4 class="f-w-400">Sign Up</h4>
 						<hr>
-						<form method="POST">
+						<form action="{{ route('register') }}" method="POST">
                             @csrf
                             <div class="form-group mb-2">
                                 <input name="name" type="text" class="form-control @error('name') is-invalid @enderror " id="Username" placeholder="Full Name">
