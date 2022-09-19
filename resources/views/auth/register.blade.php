@@ -3,7 +3,7 @@
 
 <head>
 
-	<title>Flat Able - Premium Admin Template by Phoenixcoded</title>
+	<title>Sign up</title>
 	<!-- HTML5 Shim and Respond.js IE11 support of HTML5 elements and media queries -->
 	<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
 	<!--[if lt IE 11]>
@@ -42,15 +42,30 @@
                             @csrf
                             <div class="form-group mb-2">
                                 <input name="name" type="text" class="form-control @error('name') is-invalid @enderror " id="Username" placeholder="Full Name">
+                                <div class="text-danger">
+                                    @error('name')
+                                        {{ $message }}
+                                    @enderror
+                                </div>
                             </div>
                             <div class="form-group mb-2">
-                                <input type="text" class="form-control" id="Email" placeholder="Email address">
+                                <input name="email" type="text" class="form-control @error('email') is-invalid @enderror" id="Email" placeholder="Email address">
+                                <div class="text-danger">
+                                    @error('email')
+                                        {{ $message }}
+                                    @enderror
+                                </div>
                             </div>
                             <div class="form-group mb-2">
-                                <input type="password" class="form-control" id="Password" placeholder="Password">
+                                <input name="password" type="password" class="form-control @error('password') is-invalid @enderror" id="Password" placeholder="Password">
+                                <div class="text-danger">
+                                    @error('password')
+                                        {{ $message }}
+                                    @enderror
+                                </div>
                             </div>
                             <div class="form-group mb-3">
-                                <input type="password" class="form-control" id="Password" placeholder="Confirm Password">
+                                <input name="password_confirmation" type="password" class="form-control" id="Password" placeholder="Confirm Password">
                             </div>
                             <button type="submit" class="btn btn-primary btn-block mb-3">Sign up</button>
                         </form>

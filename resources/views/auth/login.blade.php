@@ -3,7 +3,7 @@
 
 <head>
 
-	<title>LogIn</title>
+	<title>Log in</title>
 	<!-- HTML5 Shim and Respond.js IE11 support of HTML5 elements and media queries -->
 	<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
 	<!--[if lt IE 11]>
@@ -36,15 +36,18 @@
 				<div class="col-md-12">
 					<div class="card-body">
                         <img style="width: 80px" src="{{ asset ('backend/dist/assets/images/logo.png') }}" alt="" class="img-fluid mb-4">
-						<h4 class="mb-3 f-w-400">Sign In</h4>
-						<hr>
-						<div class="form-group mb-3">
-							<input type="text" class="form-control" id="Email" placeholder="Email address">
-						</div>
-						<div class="form-group mb-4">
-							<input type="password" class="form-control" id="Password" placeholder="Password">
-						</div>
-						<button class="btn btn-block btn-primary mb-4">Signin</button>
+						<form method="POST">
+							@csrf
+							<h4 class="mb-3 f-w-400">Sign In</h4>
+							<hr>
+							<div class="form-group mb-3">
+								<input name="email" type="text" class="form-control" id="Email" placeholder="Email address">
+							</div>
+							<div class="form-group mb-4">
+								<input name="password" type="password" class="form-control" id="Password" placeholder="Password">
+							</div>
+							<button type="submit" class="btn btn-block btn-primary mb-4">Signin</button>
+						</form>
 						<hr>
 						<p class="mb-2 text-muted">Forgot password? <a href="auth-reset-password.html" class="f-w-400">Reset</a></p>
 						<p class="mb-0 text-muted">Don’t have an account? <a href="{{ route('register') }}" class="f-w-400">Signup</a></p>
