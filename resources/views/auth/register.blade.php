@@ -38,19 +38,22 @@
                         <img style="width: 70px" src="{{ asset('backend/dist/assets/images/logo.png') }}" alt="" class="img-fluid mb-4">
 						<h4 class="f-w-400">Sign Up</h4>
 						<hr>
-						<div class="form-group mb-2">
-							<input type="text" class="form-control" id="Username" placeholder="Full Name">
-						</div>
-						<div class="form-group mb-2">
-							<input type="text" class="form-control" id="Email" placeholder="Email address">
-						</div>
-						<div class="form-group mb-2">
-							<input type="password" class="form-control" id="Password" placeholder="Password">
-						</div>
-                        <div class="form-group mb-3">
-							<input type="password" class="form-control" id="Password" placeholder="Confirm Password">
-						</div>
-						<button class="btn btn-primary btn-block mb-3">Sign up</button>
+						<form method="POST">
+                            @csrf
+                            <div class="form-group mb-2">
+                                <input name="name" type="text" class="form-control @error('name') is-invalid @enderror " id="Username" placeholder="Full Name">
+                            </div>
+                            <div class="form-group mb-2">
+                                <input type="text" class="form-control" id="Email" placeholder="Email address">
+                            </div>
+                            <div class="form-group mb-2">
+                                <input type="password" class="form-control" id="Password" placeholder="Password">
+                            </div>
+                            <div class="form-group mb-3">
+                                <input type="password" class="form-control" id="Password" placeholder="Confirm Password">
+                            </div>
+                            <button type="submit" class="btn btn-primary btn-block mb-3">Sign up</button>
+                        </form>
 						<hr>
 						<p class="mb-2">Already have an account? <a href="{{ route('login') }}" class="f-w-400">Signin</a></p>
 					</div>
