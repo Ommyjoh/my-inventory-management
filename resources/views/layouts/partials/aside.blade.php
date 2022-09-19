@@ -82,6 +82,10 @@
                     </ul>
                 </li>
 
+                <li class="nav-item pcoded-menu-caption">
+                    <label>Informations</label>
+                </li>
+
                 <li class="nav-item pcoded-hasmenu">
                     <a href="#!" class="nav-link "><span class="pcoded-micon"><i class="fa fa-info-circle"></i></span><span class="pcoded-mtext">Company Information</span></a>
                     <ul class="pcoded-submenu">
