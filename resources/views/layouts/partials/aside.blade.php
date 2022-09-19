@@ -83,9 +83,9 @@
                 </li>
 
                 <li class="nav-item pcoded-hasmenu">
-                    <a href="#!" class="nav-link "><span class="pcoded-micon"><i class="nav-icon fa fa-question-circle"></i></span><span class="pcoded-mtext">Support</span></a>
+                    <a href="#!" class="nav-link "><span class="pcoded-micon"><i class="fa fa-info-circle"></i></span><span class="pcoded-mtext">Company Information</span></a>
                     <ul class="pcoded-submenu">
-                        <li><a href="#" target="_blank">Support</a></li>
+                        <li><a href="#">Company Information</a></li>
                     </ul>
                 </li>
             </ul>
