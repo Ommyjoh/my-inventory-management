@@ -39,6 +39,11 @@
 						<form method="POST">
 							@csrf
 							<h4 class="mb-3 f-w-400">Sign In</h4>
+							<div class="text-danger">
+								@error('email')
+									{{ $message }}
+								@enderror
+							</div>
 							<hr>
 							<div class="form-group mb-3">
 								<input name="email" type="text" class="form-control" id="Email" placeholder="Email address">
