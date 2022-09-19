@@ -41,7 +41,10 @@
                         <ul class="pro-body">
                             <li><a href="#" class="dropdown-item"><i class="feather icon-user"></i> View Profile</a></li>
                             <li><a href="#" class="dropdown-item"><i class="feather icon-user"></i> Settings</a></li>
-                            <li><a href="#" class="dropdown-item"><i class="feather icon-lock"></i> Lock Screen</a></li>
+                            <form action="{{ route('logout') }}" method="POST">
+                                @csrf
+                                <li><a href="{{ route('logout') }}" onclick="event.preventDefault(); this.closest('form').submit();" class="dropdown-item"><i class="feather icon-lock"></i> Lock Screen</a></li>
+                            </form>
                         </ul>
                     </div>
                 </div>
