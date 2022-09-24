@@ -37,49 +37,51 @@
             </div>
             
         </div>
-        <table class="table table-bordered">
-            <thead>
-                <tr>
-                    <th style="width: 10px">#</th>
-                    <th>Name</th>
-                    <th>Telephone</th>
-                    <th>Email</th>
-                    <th>Adress</th>
-                    <th>Invoice</th>
-                    <th>Action</th>
-                </tr>
-            </thead>
-            <tbody wire:loading.class="text-muted">
-                @forelse ($customers as $customer)
+        <div class="table-responsive">
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th style="width: 10px">#</th>
+                        <th>Name</th>
+                        <th>Telephone</th>
+                        <th>Email</th>
+                        <th>Adress</th>
+                        <th>Invoice</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody wire:loading.class="text-muted">
+                    @forelse ($customers as $customer)
+                        
+                    <tr>
+                        <td>{{ $loop->iteration }}</td>
+                        <td>{{ $customer->name }}</td>
+                        <td> <a href="tel:{{ $customer->telephone }}" class="text-black">{{ '+255 '.substr($customer->telephone, 1,3). " " . substr($customer->telephone, 3,3). " " . substr($customer->telephone, 6) }}</a> </td>
+                        <td><a href="mailto:{{ $customer->email }}" class="text-black">{{ $customer->email }}</a></td>
+                        <td>{{ $customer->address }}</td>
+                        <td class="text-center"><a  href="#"><i class="nav-icon fa fa-eye text-blue " title="view invoice"></i></a></td>
+                        <td>
+                            <a wire:click = "editCustomerForm({{ $customer }})" href="#"><i class="nav-icon fa fa-edit text-primary mr-2" title="edit"></i></a>
+                            <a wire:click = "showDeleteConfirmation({{ $customer->id }})" href="#"><i class="nav-icon fa fa-trash text-danger" title="delete"></i></a>
+                        </td>
+                    </tr>
+    
+                    @empty
+    
+                    <tr>
+                        <td colspan="6" class="text-center">
+                            <div class="d-flex flex-column align-items-center justify-content-center">
+                                <img style="width: 200px" src="{{ asset('backend/dist/assets/images/notfound.png') }}" alt="">
+                                <span class="mt-2">No result found!</span>
+                            </div>
+                        </td>
+                    </tr>
                     
-                <tr>
-                    <td>{{ $loop->iteration }}</td>
-                    <td>{{ $customer->name }}</td>
-                    <td> <a href="tel:{{ $customer->telephone }}" class="text-black">{{ '+255 '.substr($customer->telephone, 1,3). " " . substr($customer->telephone, 3,3). " " . substr($customer->telephone, 6) }}</a> </td>
-                    <td><a href="mailto:{{ $customer->email }}" class="text-black">{{ $customer->email }}</a></td>
-                    <td>{{ $customer->address }}</td>
-                    <td class="text-center"><a  href="#"><i class="nav-icon fa fa-eye text-blue " title="view invoice"></i></a></td>
-                    <td>
-                        <a wire:click = "editCustomerForm({{ $customer }})" href="#"><i class="nav-icon fa fa-edit text-primary mr-2" title="edit"></i></a>
-                        <a wire:click = "showDeleteConfirmation({{ $customer->id }})" href="#"><i class="nav-icon fa fa-trash text-danger" title="delete"></i></a>
-                    </td>
-                </tr>
-
-                @empty
-
-                <tr>
-                    <td colspan="6" class="text-center">
-                        <div class="d-flex flex-column align-items-center justify-content-center">
-                            <img style="width: 200px" src="{{ asset('backend/dist/assets/images/notfound.png') }}" alt="">
-                            <span class="mt-2">No result found!</span>
-                        </div>
-                    </td>
-                </tr>
-                
-                @endforelse
-            </tbody>
-
-        </table>
+                    @endforelse
+                </tbody>
+    
+            </table>
+        </div>
     </div>
 
     <div class="d-flex justify-content-center">
