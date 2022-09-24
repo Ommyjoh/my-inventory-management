@@ -71,9 +71,9 @@
                         <td>{{ $purchase->totalPrice }}</td>
                         <td class="text-center">
                             @if ($purchase->status == "PENDING")
-                                <span class="badge bg-warning text-dark py-2 px-2">Pending</span>
+                                <span class="badge bg-warning text-dark py-2 px-2">{{ ucfirst($purchase->status) }}</span>
                             @else
-                                <span class="badge bg-primary text-white py-2 px-2">Approved</span>
+                                <span class="badge bg-primary text-white py-2 px-2">{{ ucfirst($purchase->status) }}</span>
                             @endif
                         </td>
                         <td class="text-center">
