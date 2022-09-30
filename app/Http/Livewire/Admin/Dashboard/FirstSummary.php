@@ -4,6 +4,7 @@ namespace App\Http\Livewire\Admin\Dashboard;
 
 use App\Models\Category;
 use App\Models\Customer;
+use App\Models\Invoice;
 use App\Models\Purchase;
 use App\Models\Stock;
 use App\Models\Supplier;
@@ -26,7 +27,7 @@ class FirstSummary extends Component
             'mostStocks' => Stock::all()->where('stock', '>=', 31)->count(),
             'outOfStock' => Stock::all()->where('stock', '=', 0)->count(),
             'sumPurchases' => Purchase::all()->where('status', 'APPROVED')->SUM('totalPrice'),
-            'discount' => Purchase::all()->where('status', 'APPROVED')->SUM('discount')
+            'sumSales' => Invoice::all()->where('status', 'APPROVED')->SUM('totalPrice')
         ]);
     }
 }

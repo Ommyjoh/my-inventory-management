@@ -24,6 +24,7 @@
 
             </div>
 
+            <livewire:admin.dashboard.monthly-sales-list/>
             <livewire:admin.dashboard.monthly-purchase-list/>
         <!-- [ Main Content ] end -->
     </div>

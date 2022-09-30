@@ -15,13 +15,7 @@
     <div class="collapse navbar-collapse">
         <ul class="navbar-nav mr-auto">
             <li class="nav-item">
-                <a href="#!" class="pop-search"><i class="feather icon-search"></i></a>
-                <div class="search-bar">
-                    <input type="text" class="form-control border-0 shadow-none" placeholder="Search hear">
-                    <button type="button" class="close" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
+                <span class="badge p-2 rounded-pill bg-primary text-uppercase"> Online</span>
             </li>
         </ul>
         <ul class="navbar-nav ml-auto">
@@ -32,7 +26,7 @@
                     </a>
                     <div class="dropdown-menu dropdown-menu-right profile-notification">
                         <div class="pro-head">
-                            <img src="{{asset('backend/dist/assets/images/user/profile.png')}}" class="img-radius" alt="User-Profile-Image">
+                            <span class="badge p-2 rounded-pill bg-primary text-uppercase">{{ substr(auth()->user()->name, 0,2) }}</span>
                             <span>{{ auth()->user()->name }}</span>
                             <a href="#" class="dud-logout" title="Logout">
                                 <i class="feather icon-log-out"></i>
