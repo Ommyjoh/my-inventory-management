@@ -8,9 +8,8 @@
             <tr>
                 <th style="width: 10px">#</th>
                 <th>Date</th>
+                <th>Client Name</th>
                 <th>Product Name</th>
-                <th>Supplier</th>
-                <th>Category</th>
                 <th>Qty</th>
                 <th>Total Price</th>
             </tr>
@@ -22,9 +21,8 @@
                 <tr>
                     <td>{{$loop->iteration}}</td>
                     <td>{{ $sale->updated_at }}</td>
+                    <td>{{ $sale->customer->name }}</td>
                     <td>{{ $sale->product->name }}</td>
-                    <td>{{ $sale->supplier->name }}</td>
-                    <td>{{ $sale->category->name }}</td>
                     <td>{{ $sale->qty }}</td>
                     <td>{{ $sale->totalPrice }}</td>
                 </tr>
