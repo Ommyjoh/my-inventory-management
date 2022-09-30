@@ -92,6 +92,7 @@
 						<p>Discount :TZS {{ $totalDisc }} </p>
 						<p>VAT (18%) :TZS {{ $totalAmount * 0.18 }} </p>
 						<p>Total :TZS {{ $totalAmount}} </p>
+						<p>Prepared by; <b>{{ auth()->user()->name }}</b></p>
 				</div>
 			</div>
 
